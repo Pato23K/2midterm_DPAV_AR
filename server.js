@@ -2,10 +2,9 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-app.set('view engine', 'ejs'); // Configura EJS como motor de vistas
-app.set('views', path.join(__dirname, 'views')); // Indica dónde están los archivos EJS
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
-// Función para obtener personajes de Star Wars
 async function fetchStarWarsCharacters() {
     const fetch = (await import('node-fetch')).default;
     const response = await fetch('https://akabab.github.io/starwars-api/api/all.json');
@@ -15,7 +14,6 @@ async function fetchStarWarsCharacters() {
 
 let starwarsChar = [];
 
-// Cargar personajes al inicio del servidor
 async function loadCharacters() {
     try {
         starwarsChar = await fetchStarWarsCharacters();
@@ -25,14 +23,26 @@ async function loadCharacters() {
     }
 }
 
-loadCharacters(); // Llamar a la función para cargar los personajes
+app.get('/character/next/:index', (req, res) => {
+    const index = parseInt(req.params.index, 10);
+    const nextIndex = (index + 1) % starwarsChar.length;
+    const nextCharacter = starwarsChar[nextIndex];
+    res.json({ character: nextCharacter, index: nextIndex });
+});
 
-// Servir archivos estáticos (CSS, JS, imágenes)
+app.get('/character/prev/:index', (req, res) => {
+    const index = parseInt(req.params.index, 10);
+    const prevIndex = (index - 1 + starwarsChar.length) % starwarsChar.length;
+    const prevCharacter = starwarsChar[prevIndex];
+    res.json({ character: prevCharacter, index: prevIndex });
+});
+
+
+loadCharacters();
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Ruta principal para renderizar la vista del menú
 app.get('/', (req, res) => {
-    res.render('menu'); // Renderiza el menú principal
+    res.render('menu');
 });
 
 app.get('/menu2', (req, res) => {
@@ -43,11 +53,9 @@ app.get('/map', (req, res) => {
     res.render('map');
 });
 
-// Ruta de búsqueda para filtrar personajes
 app.get('/search', (req, res) => {
-    const query = req.query.query; // Obtener el término de búsqueda del formulario
+    const query = req.query.query;
 
-    // Filtrar los personajes según el término de búsqueda
     let filteredCharacters = starwarsChar;
     if (query) {
         filteredCharacters = starwarsChar.filter(character => 
@@ -58,8 +66,25 @@ app.get('/search', (req, res) => {
     res.render('search_menu', { starwarsChar: filteredCharacters, query: query });
 });
 
-// Iniciar el servidor
+let currentIndex = 0;
+
+app.get('/character/next/:index', (req, res) => {
+    const index = parseInt(req.params.index, 10);
+    const nextIndex = (index + 1) % starwarsChar.length;
+    const nextCharacter = starwarsChar[nextIndex];
+    res.json({ character: nextCharacter, index: nextIndex });
+});
+
+app.get('/character/prev/:index', (req, res) => {
+    const index = parseInt(req.params.index, 10);
+    const prevIndex = (index - 1 + starwarsChar.length) % starwarsChar.length; 
+    const prevCharacter = starwarsChar[prevIndex];
+    res.json({ character: prevCharacter, index: prevIndex });
+});
+
+
 const port = 3000;
 app.listen(port, () => {
     console.log(`Servidor corriendo en http://localhost:${port}`);
 });
+

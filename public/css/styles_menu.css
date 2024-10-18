@@ -42,7 +42,7 @@ body {
 
 .menuDiv {
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 30px;
     border-radius: 15px;
 }

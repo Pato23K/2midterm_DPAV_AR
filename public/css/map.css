@@ -22,12 +22,12 @@ body {
 position: fixed;
 bottom: 20px;
 right: 20px;
-width: 97%; /* Ajustamos el ancho del contenedor */
-height: 94%; /* Ajustamos la altura del contenedor */
-border: 5px solid #79ffff; /* Borde con color resplandeciente */
-filter: drop-shadow(0 0 20px #79ffff); /* Efecto de resplandor */
-padding: 20px; /* Espaciado interno */
-box-sizing: border-box; /* Incluye el padding en el ancho/alto del contenedor */
+width: 97%;
+height: 94%;
+border: 5px solid #79ffff;
+filter: drop-shadow(0 0 20px #79ffff);
+padding: 20px;
+box-sizing: border-box;
 }
 
 .text-box {
@@ -44,12 +44,12 @@ cursor: pointer;
 }
 
 .text-box:hover {
-background-color: #ffffff; /* Cambia el color de fondo al hacer hover */
+background-color: #ffffff;
 }
 
 .subsections {
 color: black;
-display: block; /* Hace que el enlace ocupe toda el área del div */
+display: block;
 padding: 15px;
 text-align: center;
 font-size: 14px;
