@@ -1,0 +1,54 @@
+body {
+    background-image: url('/Img/Background-img.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #00FFEE;
+    font-family: 'Press Start 2P';
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.menuDiv {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.SLogo {
+    width: 50%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.jediText {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #79ffff;
+    margin-bottom: 20px;
+}
+
+.btn {
+    font-size: 1.5rem;
+    padding: 10px 30px;
+    text-transform: uppercase;
+}
+
+.menuDiv {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.btn {
+    font-size: 1.5rem;
+    padding: 10px 30px;
+    text-transform: uppercase;
+}

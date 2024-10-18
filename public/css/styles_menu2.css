@@ -1,0 +1,157 @@
+body{
+  background-image: url('../Img/Background-img.png');
+  background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-position: center;
+  color: #00FFEE;
+  font-family: 'Press Start 2P';
+}
+
+
+.square-border {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 97%;
+  height: 94%;
+  border: 5px solid #79ffff;
+  filter: drop-shadow(0 0 20px #79ffff);
+}
+
+
+.SLogo {
+  width: 60%;
+  height: auto;
+  margin-top: 120px;
+}
+
+
+.jediText {
+  font-family: 'Press Start 2P';
+  font-size: 150%;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #79ffff;
+  text-shadow: 0 0 20px #00FFEE;
+  margin-top: -100px;
+}
+
+
+.boton {
+  background-color: #79ffff;
+}
+
+
+.logo-container {
+  position: fixed;  
+  margin-top: 30px;
+  margin-left: 10px;
+  top: 10px;         
+  left: 10px;   
+  display: flex;
+  align-items: center;   
+}
+ .logo {
+  width: 100px;  /* Adjust the size of the logo */
+  height: auto; /* Maintains the aspect ratio of the logo */
+  margin-right: 10px; /* Space between the logo and text */
+  filter: drop-shadow(0 0 20px #79ffff);
+}
+ .logo-text {
+  font-family: 'Press Start 2P', cursive; /* Use your chosen font */
+  font-size: 30px; /* Adjust the size of the text */
+  text-shadow: 0 0 20px #00FFEE;
+  color: #79ffff;     /* Adjust the color of the text */
+  margin-left: -30px;
+  margin-top: 12px;
+}
+
+
+/*------------------------------------ Button-------------------------------------------*/
+.my-button {
+  background-color: #79ffff; /* Green background */
+  border: none;               /* Remove default border */
+  color: rgb(0, 0, 0);               /* White text color */
+  text-shadow: 0 0 -10px #79ffff;
+  padding: 15px 32px;        /* Top and bottom padding, left and right padding */
+  text-align: center;         /* Center the text */
+  text-decoration: none;      /* Remove underline from link */
+  display: inline-block;      /* Make the button inline-block */
+  font-size: 16px;            /* Font size */
+  margin: 4px 2px;           /* Margin around the button */
+  cursor: pointer;            /* Pointer cursor on hover */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+  font-family: 'Press Start 2P';
+  margin-top: 50px;
+  box-shadow: 0 0 20px #00FFEE;
+}
+ .my-button:hover {
+  background-color: #ffffff; /* Darker green on hover */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Green glow effect on hover */
+}
+
+
+/* Container for the squares */
+.menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Increase space between the squares */
+  height: 400px; 
+  filter: drop-shadow(0 0 10px #79ffff);
+
+
+}
+ /* Each square with a logo placeholder and text box */
+.square {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ /* The square itself, where the logos will be added */
+.logo-placeholder {
+  width: 250px; /* Increased size */
+  height: 250px; /* Increased size */
+  border: 5px solid #79ffff;
+  margin-bottom: -12px; /* Increased space between the square and the text box */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Ensures the image doesn’t overflow the square */
+}
+ /* Make the image inside the square bigger */
+.logo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Adjusts image scaling to fit the square */
+}
+ /* The text box connected to the square */
+ .text-box {
+  width: 250px;
+  padding: 15px;
+  background-color: #79ffff;
+  text-align: center;
+  margin-top: -20px;
+  border-top: 0;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  text-shadow: 0 0 -10px #00FFEE;
+  cursor: pointer;
+}
+
+.text-box:hover {
+  background-color: #ffffff; /* Cambia el color de fondo al hacer hover */
+}
+
+.subsections {
+  color: black;
+  display: block; /* Hace que el enlace ocupe toda el área del div */
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.subsections:hover {
+  color: yellow;
+}
