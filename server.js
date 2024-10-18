@@ -39,6 +39,10 @@ app.get('/menu2', (req, res) => {
     res.render('menu2');
 });
 
+app.get('/map', (req, res) => {
+    res.render('map');
+});
+
 // Ruta de búsqueda para filtrar personajes
 app.get('/search', (req, res) => {
     const query = req.query.query; // Obtener el término de búsqueda del formulario

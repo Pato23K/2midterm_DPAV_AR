@@ -1,0 +1,60 @@
+body {
+    background-image: url('../Img/Background-img.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #00FFEE;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.bodyM {
+    background-image: url('../Img/Background-img.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #00FFEE;
+    font-family: 'Press Start 2P', cursive;
+}  
+  
+.square-border {
+position: fixed;
+bottom: 20px;
+right: 20px;
+width: 97%; /* Ajustamos el ancho del contenedor */
+height: 94%; /* Ajustamos la altura del contenedor */
+border: 5px solid #79ffff; /* Borde con color resplandeciente */
+filter: drop-shadow(0 0 20px #79ffff); /* Efecto de resplandor */
+padding: 20px; /* Espaciado interno */
+box-sizing: border-box; /* Incluye el padding en el ancho/alto del contenedor */
+}
+
+.text-box {
+width: 250px;
+padding: 15px;
+background-color: #79ffff;
+text-align: center;
+margin-top: -20px;
+border-top: 0;
+font-family: 'Press Start 2P', cursive;
+font-size: 14px;
+text-shadow: 0 0 -10px #00FFEE;
+cursor: pointer;
+}
+
+.text-box:hover {
+background-color: #ffffff; /* Cambia el color de fondo al hacer hover */
+}
+
+.subsections {
+color: black;
+display: block; /* Hace que el enlace ocupe toda el área del div */
+padding: 15px;
+text-align: center;
+font-size: 14px;
+}
+
+.subsections:hover {
+color: yellow;
+}
