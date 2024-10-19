@@ -1,170 +1,185 @@
 body {
-    font-family: 'Press Start 2P' !important;
-    background-image: url('/Img/Background-img.png');
- }
- 
- 
- nav {
-    background-color: #1bdbfd !important;
-    color: white;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
- }
- 
- 
- nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
- }
- 
- 
- nav ul li {
-    margin: 0;
-    padding: 10px;
- }
- 
- 
- nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
- }
- 
- 
- .characters-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
- }
- 
- 
- .character-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #00ffeecf;
-    overflow: hidden;
-    text-align: center;
-    padding: 10px;
-    border-radius: 5px;
-    position: relative; /* Ensure the shadow is around the card */
-    .character-card img {
-    object-fit: cover;
-    height: 250px;
-    width: 100%;
-    padding: 2px;
-    background-color: #00ffee00;
- }
- }
- 
- 
- .character-card img {
-    object-fit: cover; /* Ensures the image fills the container while keeping the top visible */
-    object-position: top; /* Keeps the top part of the image visible when it's cropped */
-    height: 230px; /* Set a fixed height for consistency */
-    width: 100%; /* Ensure the image takes up the full width of the card */
-    padding: 2px;
-    background-color: #00ffee00; /* Transparent background */
-    filter:drop-shadow(0 0 10px #79ffff); /* Adds a glow-like shadow */
-    mix-blend-mode: luminosity; /* Blend mode to achieve the desired effect */
-    filter: contrast(1); /* Adjust contrast */
- }
- 
- 
- 
- 
- 
- 
- .character-card h2 {
-    mix-blend-mode:hard-light ;/* Blend mode to achieve the desired effect */
-    text-shadow: 0 0 10px white;
-    text-shadow: 0 0 10px rgb(0, 157, 241);
-    z-index: 10;
-    color: #fff;
-    font-size: 1em;
-    margin: 10px 0;
- }
- 
- 
- .character-card p {
-    margin: 10px 0;
-    font-size: .5em;
-    color: #ccf5ff;
- }
- 
- 
- .navbar {
-    background-color: #79ffff;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
- }
- 
- 
- body {
-    padding-top: 70px;
- }
- 
- 
- .navbar .navbar-brand,
- .navbar .nav-link {
-    color: #fff;
- }
- 
- 
- .navbar .navbar-toggler {
-    border-color: rgba(255, 255, 255, 0.1);
- }
- 
- 
- .navbar form {
-    margin-left: auto;
- }
- 
- 
- .navbar .btn-outline-success {
-    color: white;
-    border-color: #00FFEE;
- }
- 
- 
- .navbar .btn-outline-success:hover {
-    background-color: #00FFEE;
-    border-color: #00FFEE;
- }
- 
- 
- .modal-content {
-    background-color: #79ffff !important;
-    color: white;
-    border-radius: 10px;
-    padding: 20px;
- }
- 
- 
- .modal-header {
-    border-bottom: none;
- }
- 
- 
- .modal-footer {
-    border-top: none;
- }
- 
- 
- .carousel-inner img {
-    height: 400px;
-    object-fit: cover;
- }
- 
+   font-family: 'Press Start 2P' !important;
+   background-image: url('/Img/Background-img.png');
+   background-attachment: fixed;
+   background-position: center;
+   background-size: 100% 100%;
+
+}
+
+
+nav {
+   background-color: #1bdbfd !important;
+   color: white;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   z-index: 1000;
+}
+
+
+nav ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+
+
+nav ul li {
+   margin: 0;
+   padding: 10px;
+}
+
+
+nav ul li a {
+   color: white;
+   text-decoration: none;
+   padding: 10px;
+}
+
+
+.characters-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   gap: 20px;
+   padding: 20px;
+   width: 90%;
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+
+.character-card {
+   filter: brightness(1.1);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background-color: #00ffee8e;
+   overflow: hidden;
+   text-align: center;
+   padding: 10px;
+   border-radius: 5px;
+   position: relative; /* Ensure the shadow is around the card */
+   .character-card img {
+   object-fit: cover;
+   height: 250px;
+   width: 100%;
+   padding: 2px;
+   background-color: #00ffee00;
+}
+}
+
+
+.character-card img {
+   opacity: 97%;
+   object-fit: cover; /* Ensures the image fills the container while keeping the top visible */
+   object-position: top; /* Keeps the top part of the image visible when it's cropped */
+   height: 230px; /* Set a fixed height for consistency */
+   width: 100%; /* Ensure the image takes up the full width of the card */
+   padding: 2px;
+   background-color: #00ffee00; /* Transparent background */
+   filter:drop-shadow(0 0 10px #79ffff); /* Adds a glow-like shadow */
+   mix-blend-mode: luminosity; /* Blend mode to achieve the desired effect */
+   filter: contrast(1); /* Adjust contrast */
+}
+
+
+
+
+
+
+.character-card h2 {
+   mix-blend-mode:hard-light ;/* Blend mode to achieve the desired effect */
+   text-shadow: 0 0 10px white;
+   text-shadow: 0 0 10px rgb(0, 157, 241);
+   z-index: 10;
+   color: #fff;
+   font-size: 1em;
+   margin: 10px 0;
+}
+
+
+.character-card p {
+   margin: 10px 0;
+   font-size: .5em;
+   color: #ccf5ff;
+   filter:drop-shadow(0 0 10px #79ffff); /* Adds a glow-like shadow */
+
+}
+
+
+.navbar {
+   background-color: #79ffff;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   z-index: 1000;
+}
+
+
+body {
+   padding-top: 70px;
+}
+
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+   color: #fff;
+}
+
+
+.navbar .navbar-toggler {
+   border-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.navbar form {
+   margin-left: auto;
+}
+
+
+.navbar .btn-outline-success {
+   color: white;
+   border-color: #00FFEE;
+}
+
+
+.navbar .btn-outline-success:hover {
+   background-color: #00FFEE;
+   border-color: #00FFEE;
+}
+
+
+.modal-content {
+   filter:drop-shadow(0 0 10px #79ffff); /* Adds a glow-like shadow */
+   background-color: #79ffff !important;
+   color: white !important;
+   border-radius: 10px;
+   font-size: 3em;
+   padding: 20px;
+}
+
+
+.modal-header {
+   border-bottom: none;
+}
+
+
+.modal-footer {
+   border-top: none;
+}
+
+
+.carousel-inner img {
+   height: 500px;
+   object-fit: cover;
+}
+
+.carousel-container {
+   filter: drop-shadow(0 0 10px #79ffff);
+   background-color:#00ffeebd;
+   z-index: 5000;
+}
