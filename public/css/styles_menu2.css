@@ -7,10 +7,12 @@ body{
   color: #00FFEE;
   font-family: 'Press Start 2P' !important;
   text-decoration: none !important;
-}
-
-
-.square-border {
+ }
+ 
+ 
+ 
+ 
+ .square-border {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -18,17 +20,21 @@ body{
   height: 94%;
   border: 5px solid #79ffff;
   filter: drop-shadow(0 0 20px #79ffff);
-}
-
-
-.SLogo {
+ }
+ 
+ 
+ 
+ 
+ .SLogo {
   width: 60%;
   height: auto;
   margin-top: 120px;
-}
-
-
-.jediText {
+ }
+ 
+ 
+ 
+ 
+ .jediText {
   text-decoration: none;
   font-family: 'Press Start 2P';
   font-size: 150%;
@@ -37,9 +43,10 @@ body{
   color: #79ffff;
   text-shadow: 0 0 20px #00FFEE;
   margin-top: -100px;
-}
-
-.jediText2 {
+ }
+ 
+ 
+ .jediText2 {
   text-decoration: none;
   font-family: 'Press Start 2P';
   font-size: 150%;
@@ -48,29 +55,32 @@ body{
   color: #79ffff;
   text-shadow: 0 0 20px #00FFEE;
   margin-top: -100px;
-}
-
-.boton {
+ }
+ 
+ 
+ .boton {
   color: #ffffff;
   background-color: #79ffff;
-}
-
-
-.logo-container {
-  position: absolute;  
+ }
+ 
+ 
+ 
+ 
+ .logo-container {
+  position: absolute; 
   margin-top: 30px;
   margin-left: 10px;
-  top: 10px;         
-  left: 10px;   
+  top: 10px;        
+  left: 10px;  
   display: flex;
-  align-items: center;   
-}
+  align-items: center;  
+ }
  .logo {
   width: 100px;
   height: auto;
   margin-right: 10px;
   filter: drop-shadow(0 0 20px #79ffff);
-}
+ }
  .logo-text {
   font-family: 'Press Start 2P', cursive;
   font-size: 30px;
@@ -79,9 +89,10 @@ body{
   margin-left: -30px;
   margin-top: 12px;
   text-decoration: none !important;
-}
-
-.my-button {
+ }
+ 
+ 
+ .my-button {
   background-color: #79ffff;
   border: none;
   color: rgb(0, 0, 0) !important;
@@ -89,36 +100,39 @@ body{
   padding: 15px 32px;
   text-align: center;
   text-decoration: none !important;
-  display: inline-block; 
-  font-size: 16px; 
+  display: inline-block;
+  font-size: 16px;
   margin: 4px 2px;
-  cursor: pointer; 
-  transition: background-color 0.3s, box-shadow 0.3s; 
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
   font-family: 'Press Start 2P';
   margin-top: 50px;
   box-shadow: 0 0 20px #00FFEE;
-}
+ }
  .my-button:hover {
   background-color: #ffffff;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); 
-}
-
-.menu-container {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+ }
+ 
+ 
+ .menu-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px; 
-  height: 400px; 
+  gap: 10px;
+  height: 400px;
   filter: drop-shadow(0 0 10px #79ffff);
-}
-
-.square {
+ }
+ 
+ 
+ .square {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.logo-placeholder {
+ }
+ 
+ 
+ .logo-placeholder {
   width: 250px; /* Keep this as is */
   height: 250px; /* Keep this as is */
   border: 5px solid #79ffff;
@@ -127,16 +141,16 @@ body{
   justify-content: center;
   align-items: center;
   overflow: hidden;
-}
-
-.logo-placeholder img {
+ }
+ 
+ 
+ .logo-placeholder img {
   width: 80%; /* Set the width to a percentage of the placeholder */
   height: auto; /* Maintain aspect ratio */
   filter: drop-shadow(0 0 10px #79ffff);
   object-fit: contain; /* Ensure the image fits within the container */
-}
- 
-.text-box {
+ }
+ .text-box {
   text-decoration: none !important;
   width: 250px;
   padding: 15px;
@@ -148,32 +162,62 @@ body{
   font-size: 14px;
   cursor: pointer;
   box-shadow: 0 0 10px #79ffff !important;
-
-}
-
-.text-box:hover {
+ 
+ 
+ }
+ 
+ 
+ .text-box:hover {
   text-decoration: none;
   color: rgb(67, 167, 255);
   box-shadow: 0 0 100px #bffffb;
   background-color: #bffffb;
-}
-
-.subsections {
+ }
+ 
+ 
+ .subsections {
   color: black;
   display: block;
   padding: 15px;
   text-align: center;
   font-size: 14px;
-}
-
-.subsections:hover {
+ }
+ 
+ 
+ .subsections:hover {
   color: yellow;
-}
-
-.textin {
+ }
+ 
+ 
+ .textin {
   text-decoration: none !important;
   color: black;
-}
-.textin:hover{
+ }
+ .textin:hover{
   text-decoration: none !important;
-}
+ }
+ h2 {
+  margin-top: 60px; /* Increase this value to move it further down */
+  color: #00FFEE; /* Make sure it matches your design */
+  text-align: center; /* Center the headings */
+ }
+ .back-button {
+  position: absolute; /* Use absolute positioning */
+  bottom: 20px; /* Adjust this value to increase/decrease space from the bottom */
+  left: 20px; /* Adjust this value to increase/decrease space from the left */
+ }
+ 
+ 
+ .back-button .text-box {
+  text-decoration: none !important; /* Ensure no underlining */
+  padding: 10px 20px; /* Add padding for better appearance */
+  background-color: #79ffff; /* Background color of the button */
+  color: #ffffff; /* Text color */
+  box-shadow: 0 0 10px #79ffff; /* Optional shadow for effect */
+ }
+ .back-button .text-box:hover {
+  background-color: #befffb !important; /* Change background on hover */
+    color: #00c3ff  !important;                /* Change text color on hover */
+    border-color: #befffb !important;
+ }
+ 

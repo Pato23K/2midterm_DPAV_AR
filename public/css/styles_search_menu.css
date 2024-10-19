@@ -1,37 +1,43 @@
 body {
+    font-family: 'Press Start 2P' !important;
     background-image: url('/Img/Background-img.png');
-}
-
-nav {
-    background-color: #333;
+ }
+ 
+ 
+ nav {
+    background-color: #1bdbfd !important;
     color: white;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-}
-
-nav ul {
+ }
+ 
+ 
+ nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
-
-nav ul li {
+ }
+ 
+ 
+ nav ul li {
     margin: 0;
     padding: 10px;
-}
-
-nav ul li a {
+ }
+ 
+ 
+ nav ul li a {
     color: white;
     text-decoration: none;
     padding: 10px;
-}
-
-.characters-container {
+ }
+ 
+ 
+ .characters-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
@@ -39,91 +45,126 @@ nav ul li a {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-.character-card {
+ }
+ 
+ 
+ .character-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #00FFEE;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #00ffeecf;
     overflow: hidden;
     text-align: center;
     padding: 10px;
-}
-
-.character-card img {
-    object-fit: contain;
-    border-bottom: 1px solid #ddd;
+    border-radius: 5px;
+    position: relative; /* Ensure the shadow is around the card */
+    .character-card img {
+    object-fit: cover;
     height: 250px;
-    width: auto;
-    background-color: black;
+    width: 100%;
     padding: 2px;
-}
-
-
-.character-card h2 {
-    font-size: 1.5em;
-    margin: 10px 0;
-}
-
-.character-card p {
-    margin: 10px 0;
+    background-color: #00ffee00;
+ }
+ }
+ 
+ 
+ .character-card img {
+    object-fit: cover; /* Ensures the image fills the container while keeping the top visible */
+    object-position: top; /* Keeps the top part of the image visible when it's cropped */
+    height: 230px; /* Set a fixed height for consistency */
+    width: 100%; /* Ensure the image takes up the full width of the card */
+    padding: 2px;
+    background-color: #00ffee00; /* Transparent background */
+    filter:drop-shadow(0 0 10px #79ffff); /* Adds a glow-like shadow */
+    mix-blend-mode: luminosity; /* Blend mode to achieve the desired effect */
+    filter: contrast(1); /* Adjust contrast */
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ .character-card h2 {
+    mix-blend-mode:hard-light ;/* Blend mode to achieve the desired effect */
+    text-shadow: 0 0 10px white;
+    text-shadow: 0 0 10px rgb(0, 157, 241);
+    z-index: 10;
+    color: #fff;
     font-size: 1em;
-    color: #555;
-}
-
-.navbar {
-    background-color: #3e2723;
+    margin: 10px 0;
+ }
+ 
+ 
+ .character-card p {
+    margin: 10px 0;
+    font-size: .5em;
+    color: #ccf5ff;
+ }
+ 
+ 
+ .navbar {
+    background-color: #79ffff;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-}
-
-body {
+ }
+ 
+ 
+ body {
     padding-top: 70px;
-}
-
-.navbar .navbar-brand, 
-.navbar .nav-link {
+ }
+ 
+ 
+ .navbar .navbar-brand,
+ .navbar .nav-link {
     color: #fff;
-}
-
-.navbar .navbar-toggler {
+ }
+ 
+ 
+ .navbar .navbar-toggler {
     border-color: rgba(255, 255, 255, 0.1);
-}
-
-.navbar form {
+ }
+ 
+ 
+ .navbar form {
     margin-left: auto;
-}
-
-.navbar .btn-outline-success {
+ }
+ 
+ 
+ .navbar .btn-outline-success {
     color: white;
     border-color: #00FFEE;
-}
-
-.navbar .btn-outline-success:hover {
+ }
+ 
+ 
+ .navbar .btn-outline-success:hover {
     background-color: #00FFEE;
     border-color: #00FFEE;
-}
-
-.modal-content {
-    background-color: #333;
+ }
+ 
+ 
+ .modal-content {
+    background-color: #79ffff !important;
     color: white;
     border-radius: 10px;
     padding: 20px;
-}
-
-.modal-header {
+ }
+ 
+ 
+ .modal-header {
     border-bottom: none;
-}
-
-.modal-footer {
+ }
+ 
+ 
+ .modal-footer {
     border-top: none;
-}
-
-.carousel-inner img {
+ }
+ 
+ 
+ .carousel-inner img {
     height: 400px;
     object-fit: cover;
-}
+ }
+ 

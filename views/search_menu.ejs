@@ -1,150 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Wars Characters</title>
-    <link rel="stylesheet" href="./css/styles_search_menu.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Wars Characters</title>
+  <link rel="stylesheet" href="./css/styles_search_menu.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Star Wars DB</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                </ul>
-              </li>
-            </ul>
-            <form class="d-flex ml-auto" method="get" action="/search">
-              <input class="form-control me-2" name="query" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+       <a class="navbar-brand" href="#">
+         <img src="Img/StarWarslogo.png" alt="Star Wars Logo" style="height: 50px;"> <!-- Adjust height as needed -->
+     </a>         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex ml-auto" method="get" action="/search">
+            <input class="form-control me-2" name="query" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
         </div>
-      </nav>
+      </div>
+    </nav>
 
-    <h1 style="color: #00FFEE; text-align: center;">Star Wars Characters</h1>
-    <div class="characters-container">
-      <% starwarsChar.forEach((char, index) => { %>
-        <div class="character-card">
-          <img class="character-card img" 
-               src="<%= char.image %>" 
-               alt="<%= char.name %>" 
-               data-bs-toggle="modal"   
-               data-bs-target="#characterModal<%= char.id %>"/>
-    
-          <h2><%= char.name %></h2>
-          <p>Species: <%= char.species %></p>
-          <p>Height: <%= char.height %> cm</p>
-    
-          <div class="modal fade" 
-               id="characterModal<%= char.id %>" 
-               tabindex="-1" 
-               aria-labelledby="characterModalLabel<%= char.id %>" 
-               aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" 
-                      id="characterModalLabel<%= char.id %>">
-                    <%= char.name %>
-                  </h5>
-                  <button type="button" 
-                          class="btn-close" 
-                          data-bs-dismiss="modal" 
-                          aria-label="Close">
+
+
+
+    <h1 style="color: #00FFEE; text-align: center; margin-top: 50px;">Star Wars Characters</h1>
+
+
+  <div class="characters-container">
+    <% starwarsChar.forEach((char, index) => { %>
+      <div class="character-card">
+       <img class="character-card img"
+       src="<%= char.image ? char.image : '/Img/NoCharacterPhoto.png' %>"
+       alt="<%= char.name %>"
+       data-bs-toggle="modal"
+       data-bs-target="#characterModal<%= char.id %>"/>
+         <!-- Overlay for color and texture -->
+        <div class="overlay"></div>
+         <h2><%= char.name %></h2>
+        <p>Species: <%= char.species %></p>
+        <p>Height: <%= char.height %> cm</p>
+         <div class="modal fade"
+             id="characterModal<%= char.id %>"
+             tabindex="-1"
+             aria-labelledby="characterModalLabel<%= char.id %>"
+             aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"
+                    id="characterModalLabel<%= char.id %>">
+                  <%= char.name %>
+                </h5>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close">
+                </button>
+              </div>
+              <div class="modal-body">
+                <div id="carousel<%= char.id %>"
+                     class="carousel slide"
+                     data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="<%= char.image %>"
+                           class="d-block w-100"
+                           alt="<%= char.name %>">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carousel<%= char.id %>" data-bs-slide="prev" onclick="prevCharacter(<%= char.id %>)">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                   <button class="carousel-control-next" type="button" data-bs-target="#carousel<%= char.id %>" data-bs-slide="next" onclick="nextCharacter(<%= char.id %>)">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
                   </button>
                 </div>
-                <div class="modal-body">
-                  <div id="carousel<%= char.id %>" 
-                       class="carousel slide" 
-                       data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="<%= char.image %>" 
-                             class="d-block w-100" 
-                             alt="<%= char.name %>">
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel<%= char.id %>" data-bs-slide="prev" onclick="prevCharacter(<%= char.id %>)">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-
-                    <button class="carousel-control-next" type="button" data-bs-target="#carousel<%= char.id %>" data-bs-slide="next" onclick="nextCharacter(<%= char.id %>)">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-    
-                  <p><strong>Species:</strong> <%= char.species %></p>
-                  <p><strong>Height:</strong> <%= char.height %> cm</p>
-                  <p><strong>Gender:</strong> <%= char.gender %></p>
-                  <p><strong>Homeworld:</strong> <%= char.homeworld %></p>
-                </div>
+                 <p><strong>Species:</strong> <%= char.species %></p>
+                <p><strong>Height:</strong> <%= char.height %> cm</p>
+                <p><strong>Gender:</strong> <%= char.gender %></p>
+                <p><strong>Homeworld:</strong> <%= char.homeworld %></p>
               </div>
             </div>
           </div>
         </div>
-      <% }) %>
-    </div>
-    
+      </div>
+    <% }) %>
+  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <script>
-    let totalCharacters = <%= starwarsChar.length %>; 
 
-    
-    function nextCharacter(id) {
-        let nextId = id + 1;
-        if (nextId > totalCharacters) {
-            nextId = 1;
-        }
 
-        const currentModal = document.querySelector(`#characterModal${id}`);
-        const modalInstance = bootstrap.Modal.getInstance(currentModal);
-        modalInstance.hide();
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-        setTimeout(() => {
-            const newModal = new bootstrap.Modal(document.querySelector(`#characterModal${nextId}`));
-            newModal.show();
-        }, 300);
-    }
 
-    function prevCharacter(id) {
-        let prevId = id - 1;
-        if (prevId < 1) {
-            prevId = totalCharacters;
-        }
 
-        const currentModal = document.querySelector(`#characterModal${id}`);
-        const modalInstance = bootstrap.Modal.getInstance(currentModal);
-        modalInstance.hide();
 
-        setTimeout(() => {
-            const newModal = new bootstrap.Modal(document.querySelector(`#characterModal${prevId}`));
-            newModal.show();
-        }, 300);
-    }
-  </script>
+<script>
+  let totalCharacters = <%= starwarsChar.length %>;
+
+
+
+
+   function nextCharacter(id) {
+      let nextId = id + 1;
+      if (nextId > totalCharacters) {
+          nextId = 1;
+      }
+
+
+
+
+      const currentModal = document.querySelector(`#characterModal${id}`);
+      const modalInstance = bootstrap.Modal.getInstance(currentModal);
+      modalInstance.hide();
+
+
+
+
+      setTimeout(() => {
+          const newModal = new bootstrap.Modal(document.querySelector(`#characterModal${nextId}`));
+          newModal.show();
+      }, 300);
+  }
+
+
+
+
+  function prevCharacter(id) {
+      let prevId = id - 1;
+      if (prevId < 1) {
+          prevId = totalCharacters;
+      }
+
+
+
+
+      const currentModal = document.querySelector(`#characterModal${id}`);
+      const modalInstance = bootstrap.Modal.getInstance(currentModal);
+      modalInstance.hide();
+
+
+
+
+      setTimeout(() => {
+          const newModal = new bootstrap.Modal(document.querySelector(`#characterModal${prevId}`));
+          newModal.show();
+      }, 300);
+  }
+</script>
+
+
+
 
 </body>
 </html>
+
+
+
+
+
+
