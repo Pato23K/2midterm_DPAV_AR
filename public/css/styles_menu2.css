@@ -6,6 +6,7 @@ body{
     background-position: center;
   color: #00FFEE;
   font-family: 'Press Start 2P';
+  text-decoration: none;
 }
 
 
@@ -28,6 +29,7 @@ body{
 
 
 .jediText {
+  text-decoration: none;
   font-family: 'Press Start 2P';
   font-size: 150%;
   text-transform: uppercase;
@@ -37,8 +39,19 @@ body{
   margin-top: -100px;
 }
 
+.jediText2 {
+  text-decoration: none;
+  font-family: 'Press Start 2P';
+  font-size: 150%;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #79ffff;
+  text-shadow: 0 0 20px #00FFEE;
+  margin-top: -100px;
+}
 
 .boton {
+  color: #ffffff;
   background-color: #79ffff;
 }
 
@@ -122,6 +135,7 @@ body{
 }
  
 .text-box {
+  text-decoration: none;
   width: 250px;
   padding: 15px;
   background-color: #79ffff;
@@ -135,7 +149,10 @@ body{
 }
 
 .text-box:hover {
-  background-color: #ffffff;
+  text-decoration: none;
+  color: aliceblue;
+  box-shadow: 0 0 40px #00FFEE;
+  background-color: #00FFEE;
 }
 
 .subsections {

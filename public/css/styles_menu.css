@@ -5,12 +5,13 @@ body {
     background-attachment: fixed;
     background-position: center;
     color: #00FFEE;
-    font-family: 'Press Start 2P';
+    font-family: 'Press Start 2P'!important;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
+    text-shadow: 0 0 10px #00FFEE;
 }
 
 .menuDiv {
@@ -27,11 +28,11 @@ body {
 }
 
 .jediText {
-    font-size: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #79ffff;
-    margin-bottom: 20px;
+    font-size: 2rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 3px !important;
+    color: #79ffff !important;
+    margin-bottom: 20px !important;
 }
 
 .btn {
@@ -51,4 +52,21 @@ body {
     font-size: 1.5rem;
     padding: 10px 30px;
     text-transform: uppercase;
+}
+
+.botoncin{
+    border-radius: 0px !important;
+    border-width: 3px !important;
+    border-color: #00FFEE !important;
+    background-color: #00FFEE !important;
+    font-family: 'Press Start 2P'!important;
+    color: rgb(0, 0, 0) !important;
+    box-shadow:0 0 10px #00FFEE !important;
+}
+
+.botoncin:hover {
+    background-color: #befffb !important; /* Change background on hover */
+    color: #00c3ff  !important;                /* Change text color on hover */
+    border-color: #befffb !important;
+
 }
