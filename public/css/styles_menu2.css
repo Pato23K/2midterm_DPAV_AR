@@ -5,8 +5,8 @@ body{
     background-attachment: fixed;
     background-position: center;
   color: #00FFEE;
-  font-family: 'Press Start 2P';
-  text-decoration: none;
+  font-family: 'Press Start 2P' !important;
+  text-decoration: none !important;
 }
 
 
@@ -78,16 +78,17 @@ body{
   color: #79ffff;
   margin-left: -30px;
   margin-top: 12px;
+  text-decoration: none !important;
 }
 
 .my-button {
   background-color: #79ffff;
   border: none;
-  color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0) !important;
   text-shadow: 0 0 -10px #79ffff;
   padding: 15px 32px;
   text-align: center;
-  text-decoration: none;
+  text-decoration: none !important;
   display: inline-block; 
   font-size: 16px; 
   margin: 4px 2px;
@@ -118,8 +119,8 @@ body{
 }
 
 .logo-placeholder {
-  width: 250px; 
-  height: 250px;
+  width: 250px; /* Keep this as is */
+  height: 250px; /* Keep this as is */
   border: 5px solid #79ffff;
   margin-bottom: -12px;
   display: flex;
@@ -129,13 +130,14 @@ body{
 }
 
 .logo-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
+  width: 80%; /* Set the width to a percentage of the placeholder */
+  height: auto; /* Maintain aspect ratio */
+  filter: drop-shadow(0 0 10px #79ffff);
+  object-fit: contain; /* Ensure the image fits within the container */
 }
  
 .text-box {
-  text-decoration: none;
+  text-decoration: none !important;
   width: 250px;
   padding: 15px;
   background-color: #79ffff;
@@ -144,15 +146,16 @@ body{
   border-top: 0;
   font-family: 'Press Start 2P', cursive;
   font-size: 14px;
-  text-shadow: 0 0 -10px #00FFEE;
   cursor: pointer;
+  box-shadow: 0 0 10px #79ffff !important;
+
 }
 
 .text-box:hover {
   text-decoration: none;
-  color: aliceblue;
-  box-shadow: 0 0 40px #00FFEE;
-  background-color: #00FFEE;
+  color: rgb(67, 167, 255);
+  box-shadow: 0 0 100px #bffffb;
+  background-color: #bffffb;
 }
 
 .subsections {
@@ -165,4 +168,12 @@ body{
 
 .subsections:hover {
   color: yellow;
+}
+
+.textin {
+  text-decoration: none !important;
+  color: black;
+}
+.textin:hover{
+  text-decoration: none !important;
 }
