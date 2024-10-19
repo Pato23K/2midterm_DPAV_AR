@@ -23,24 +23,10 @@ async function loadCharacters() {
     }
 }
 
-app.get('/character/next/:index', (req, res) => {
-    const index = parseInt(req.params.index, 10);
-    const nextIndex = (index + 1) % starwarsChar.length;
-    const nextCharacter = starwarsChar[nextIndex];
-    res.json({ character: nextCharacter, index: nextIndex });
-});
-
-app.get('/character/prev/:index', (req, res) => {
-    const index = parseInt(req.params.index, 10);
-    const prevIndex = (index - 1 + starwarsChar.length) % starwarsChar.length;
-    const prevCharacter = starwarsChar[prevIndex];
-    res.json({ character: prevCharacter, index: prevIndex });
-});
-
-
 loadCharacters();
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Renderizado de vistas
 app.get('/', (req, res) => {
     res.render('menu');
 });
@@ -51,6 +37,10 @@ app.get('/menu2', (req, res) => {
 
 app.get('/map', (req, res) => {
     res.render('map');
+});
+
+app.get('/future', (req, res) => {
+    res.render('future');
 });
 
 app.get('/search', (req, res) => {
@@ -66,8 +56,7 @@ app.get('/search', (req, res) => {
     res.render('search_menu', { starwarsChar: filteredCharacters, query: query });
 });
 
-let currentIndex = 0;
-
+// Navegación entre personajes
 app.get('/character/next/:index', (req, res) => {
     const index = parseInt(req.params.index, 10);
     const nextIndex = (index + 1) % starwarsChar.length;
@@ -82,9 +71,7 @@ app.get('/character/prev/:index', (req, res) => {
     res.json({ character: prevCharacter, index: prevIndex });
 });
 
-
 const port = 3000;
 app.listen(port, () => {
     console.log(`Servidor corriendo en http://localhost:${port}`);
 });
-

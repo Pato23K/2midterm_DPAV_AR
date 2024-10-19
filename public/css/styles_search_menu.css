@@ -162,6 +162,16 @@ body {
    padding: 20px;
 }
 
+/* Ajuste para las imágenes del modal */
+.modal-body img {
+   width: 100%; /* Asegura que la imagen tome el ancho completo del modal */
+   max-height: 400px; /* Establece una altura máxima */
+   object-fit: contain; /* Asegura que la imagen mantenga sus proporciones dentro del contenedor */
+   margin: 0 auto; /* Centra la imagen dentro del modal */
+   display: block; /* Asegura que se comporte como un bloque y no tenga espacios extra alrededor */
+}
+
+
 
 .modal-header {
    border-bottom: none;
@@ -182,4 +192,8 @@ body {
    filter: drop-shadow(0 0 10px #79ffff);
    background-color:#00ffeebd;
    z-index: 5000;
+}
+
+p{
+   font-size: small;
 }

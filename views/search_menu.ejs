@@ -10,175 +10,253 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container-fluid">
-       <a class="navbar-brand" href="#">
-         <img src="Img/StarWarslogo.png" alt="Star Wars Logo" style="height: 50px;"> <!-- Adjust height as needed -->
-     </a>         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/"> HOME \</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                DATABASE 
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">CHARACTERS</a></li>
-                <li><a class="dropdown-item" href="#">MAP</a></li>
-                <li><a class="dropdown-item" href="#">FUTURE PLANS</a></li>
-              </ul>
-            </li>
-          </ul>
-          <form class="d-flex ml-auto" method="get" action="/search">
-            <input class="form-control me-2" name="query" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </div>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="Img/StarWarslogo.png" alt="Star Wars Logo" style="height: 50px;"> <!-- Adjust height as needed -->
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/"> HOME \</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              DATABASE 
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">CHARACTERS</a></li>
+              <li><a class="dropdown-item" href="/map">MAP</a></li>
+              <li><a class="dropdown-item" href="#">FUTURE PLANS</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex ml-auto" method="get" action="/search">
+          <input class="form-control me-2" name="query" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-
-
-
-    <h1 style="color: #00FFEE; text-align: center; margin-top: 50px;">Star Wars Characters</h1>
-
+  <h1 style="color: #00FFEE; text-align: center; margin-top: 50px;">Star Wars Characters</h1>
 
   <div class="characters-container">
     <% starwarsChar.forEach((char, index) => { %>
       <div class="character-card">
-       <img class="character-card img"
-       src="<%= char.image ? char.image : '/Img/NoCharacterPhoto.png' %>"
-       alt="<%= char.name %>"
-       data-bs-toggle="modal"
-       data-bs-target="#characterModal<%= char.id %>"/>
-         <!-- Overlay for color and texture -->
+        <img class="character-card img"
+        src="<%= char.image ? char.image : '/Img/NoCharacterPhoto.png' %>"
+        alt="<%= char.name %>"
+        data-bs-toggle="modal"
+        data-bs-target="#characterModal<%= char.id %>"/>
+        <!-- Overlay for color and texture -->
         <div class="overlay"></div>
-         <h2><%= char.name %></h2>
+        <h2><%= char.name %></h2>
         <p>Species: <%= char.species %></p>
         <p>Height: <%= char.height %> cm</p>
-         <div class="modal fade"
-             id="characterModal<%= char.id %>"
-             tabindex="-1"
-             aria-labelledby="characterModalLabel<%= char.id %>"
-             aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title"
-                    id="characterModalLabel<%= char.id %>">
-                  <%= char.name %>
-                </h5>
-                <button type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close">
-                </button>
-              </div>
-              <div class="modal-body">
-                <div id="carousel<%= char.id %>"
-                     class="carousel slide"
-                     data-bs-ride="carousel">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img src="<%= char.image %>"
-                           class="d-block w-100"
-                           alt="<%= char.name %>">
-                    </div>
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carousel<%= char.id %>" data-bs-slide="prev" onclick="prevCharacter(<%= char.id %>)">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-                   <button class="carousel-control-next" type="button" data-bs-target="#carousel<%= char.id %>" data-bs-slide="next" onclick="nextCharacter(<%= char.id %>)">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
-                </div>
-                 <p><strong>Species:</strong> <%= char.species %></p>
-                <p><strong>Height:</strong> <%= char.height %> cm</p>
-                <p><strong>Gender:</strong> <%= char.gender %></p>
-                <p><strong>Homeworld:</strong> <%= char.homeworld %></p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     <% }) %>
   </div>
 
+  <!-- MOVED MODALS OUTSIDE OF CHARACTER CARDS -->
+  <% starwarsChar.forEach((char, index) => { %>
+    <div class="modal fade"
+         id="characterModal<%= char.id %>"
+         tabindex="-1"
+         aria-labelledby="characterModalLabel<%= char.id %>"
+         aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="characterModalLabel<%= char.id %>">
+              <%= char.name %>
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="carousel<%= char.id %>" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active " >
+                  <img src="<%= char.image %>" class="d-block w-100" alt="<%= char.name %>">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carousel<%= char.id %>" data-bs-slide="prev" onclick="prevCharacter(<%= char.id %>)">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carousel<%= char.id %>" data-bs-slide="next" onclick="nextCharacter(<%= char.id %>)">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            <p><strong>Species:</strong> <%= char.species %></p>
+            <p><strong>Height:</strong> <%= char.height %> m</p>
+            <p><strong>Mass:</strong> <%= char.mass %> kg</p>
+            <p><strong>Gender:</strong> <%= char.gender %></p>
+            <p><strong>Homeworld:</strong> <%= char.homeworld %></p>
+            <% if(char.species == "droid"){%>
+              <% if(char.dateCreated < 0){%>
+                <p><strong>Date created:</strong> <%=char.dateCreated%> BBY </p>
+              <%}else{%>
+                <p><strong>Date created:</strong> <%=char.dateCreated%> ABY </p>
+              <%}%>
+              <% if (typeof char.dateDestroyed === 'number') { %> 
+                <% if (char.dateDestroyed < 0) { %>
+                  <p><strong>Date destroyed:</strong> <%= Math.abs(char.dateDestroyed) %> BBY</p>
+                <% } else { %>
+                  <p><strong>Date destroyed:</strong> <%= char.dateDestroyed %> ABY</p>
+                <% } %>
+              <% } %>
+              <% if(char.destroyedLocation && char.destroyedLocation.length > 0) { %> 
+                <p><strong>Destroyed location:</strong> <%= char.destroyedLocation %></p>
+              <% } %>
+              <% if (char.creator) { %>
+                <p><strong>Creator:</strong> <%= char.creator %></p>
+              <% } else { %>
+                <p><strong>Creator:</strong> Unknown</p>
+              <% } %>
+              <% if (char.manufacturer) { %>
+                <p><strong>Manufacturer:</strong> <%= char.manufacturer %></p>
+              <% } else { %>
+                <p><strong>Manufacturer:</strong> Unknown</p>
+              <% } %>
+              <% if (char.model) { %>
+                <p><strong>Model:</strong> <%= char.model %></p>
+              <% } else { %>
+                <p><strong>Model:</strong> Unknown</p>
+              <% } %>
+              <% if (char.class) { %>
+                <p><strong>Class:</strong> <%= char.class %></p>
+              <% } else { %>
+                <p><strong>Class:</strong> Unknown</p>
+              <% } %>
+              <% if (char.sensorColor) { %>
+                <p><strong>Sensor color:</strong> <%= char.sensorColor %></p>
+              <% } else { %>
+                <p><strong>Sensor color:</strong> Unknown</p>
+              <% } %>
+              <% if (char.platingColor) { %>
+                <p><strong>Plating color:</strong> <%= char.platingColor %></p>
+              <% } else { %>
+                <p><strong>Plating color:</strong> Unknown</p>
+              <% } %>
+              <% if (char.platingColor) { %>
+                <p><strong>Plating color:</strong> <%= char.platingColor %></p>
+              <% } else { %>
+                <p><strong>Plating color:</strong> Unknown</p>
+              <% } %>
+              <% if(Array.isArray(char.equipment) && char.equipment.length > 0) { %>
+                <p><strong>Equipment:</strong></p>
+                <ul style="font-size: small;">
+                  <% char.equipment.forEach((equipment, index) => { %>
+                    <li><%= equipment %></li>
+                  <% }) %>
+                </ul>
+              <% } else { %>
+                <p><strong>Equipment:</strong> <%=char.equipment%></p>
+              <% } %>
+              <p><strong>Affiliations:</strong><ul style="font-size: small;">
+                <% char.affiliations.forEach((aff, index) => { %>
+                  <li><%= aff %></li>
+                <% }) %>
+              </ul>
+            <%}else{%>
+              <% if(char.born < 0){%>
+                <p><strong>Born:</strong> <%=char.born%> BBY </p>
+              <%}else{%>
+                <p><strong>Born:</strong> <%=char.born%> ABY </p>
+              <%}%>
+              <p><strong>Born Location:</strong> <%= char.bornLocation %></p>
+              <% if (typeof char.died === 'number') { %> 
+                <% if (char.died < 0) { %>
+                  <p><strong>Died:</strong> <%= Math.abs(char.died) %> BBY</p>
+                <% } else { %>
+                  <p><strong>Died:</strong> <%= char.died %> ABY</p>
+                <% } %>
+              <% } %>
+              <% if(char.diedLocation && char.diedLocation.length > 0) { %> 
+                <p><strong>Died Location:</strong> <%= char.diedLocation %></p>
+              <% } %>
+              <p><strong>Hair color:</strong> <%= char.hairColor %></p>
+              <p><strong>Eye color:</strong> <%= char.eyeColor %></p>
+              <p><strong>Skin color:</strong> <%= char.skinColor %></p>
+              <% if(char.cybernetics && char.cybernetics.length > 0) { %> 
+                <p><strong>Cybernetics:</strong> <%= char.cybernetics %></p>
+              <% } %>
+              <p><strong>Affiliations:</strong><ul style="font-size: small;">
+                <% char.affiliations.forEach((aff, index) => { %>
+                  <li><%= aff %></li>
+                <% }) %>
+              </ul>
+              <% if(Array.isArray(char.masters) && char.masters.length > 0) { %>
+                <p><strong>Masters:</strong></p>
+                <ul style="font-size: small;">
+                  <% char.masters.forEach((mas, index) => { %>
+                    <li><%= mas %></li>
+                  <% }) %>
+                </ul>
+              <% } else { %>
+                <p><strong>Masters:</strong> <%=char.masters%></p>
+              <% } %>
+              <% if (Array.isArray(char.apprentices) && char.apprentices.length > 0) { %> 
+                <p><strong>Apprentices:</strong></p>
+                <ul style="font-size: small;">
+                  <% char.apprentices.forEach((app, index) => { %>
+                    <li><%= app %></li>
+                  <% }) %>
+                </ul>
+              <% } else { %>
+                <p><strong>Apprentices:</strong> No apprentices available.</p>
+              <% } %>              
+            <%}%>  
+          </div>
+          <div class="modal-footer">
+            <p><strong>wiki:</strong> <a href="<%=char.wiki%>">Click here</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% }) %>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+  <script>
+    let totalCharacters = <%= starwarsChar.length %>;
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
-
-<script>
-  let totalCharacters = <%= starwarsChar.length %>;
-
-
-
-
-   function nextCharacter(id) {
+    function nextCharacter(id) {
       let nextId = id + 1;
       if (nextId > totalCharacters) {
-          nextId = 1;
+        nextId = 1;
       }
-
-
-
 
       const currentModal = document.querySelector(`#characterModal${id}`);
       const modalInstance = bootstrap.Modal.getInstance(currentModal);
       modalInstance.hide();
 
-
-
-
       setTimeout(() => {
-          const newModal = new bootstrap.Modal(document.querySelector(`#characterModal${nextId}`));
-          newModal.show();
+        const newModal = new bootstrap.Modal(document.querySelector(`#characterModal${nextId}`));
+        newModal.show();
       }, 300);
-  }
+    }
 
-
-
-
-  function prevCharacter(id) {
+    function prevCharacter(id) {
       let prevId = id - 1;
       if (prevId < 1) {
-          prevId = totalCharacters;
+        prevId = totalCharacters + 1;
       }
-
-
-
 
       const currentModal = document.querySelector(`#characterModal${id}`);
       const modalInstance = bootstrap.Modal.getInstance(currentModal);
       modalInstance.hide();
 
-
-
-
       setTimeout(() => {
-          const newModal = new bootstrap.Modal(document.querySelector(`#characterModal${prevId}`));
-          newModal.show();
+        const newModal = new bootstrap.Modal(document.querySelector(`#characterModal${prevId}`));
+        newModal.show();
       }, 300);
-  }
-</script>
-
-
-
+    }
+  </script>
 
 </body>
 </html>
-
-
-
-
-
-
